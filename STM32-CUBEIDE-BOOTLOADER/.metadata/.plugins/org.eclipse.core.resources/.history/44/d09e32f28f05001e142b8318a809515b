@@ -1,0 +1,79 @@
+/*
+ * bootloader_command_app.c
+ *
+ *  Created on: 8 Jun 2023
+ *      Author: Mustafa
+ */
+#include "bootloader_command_app.h"
+/*                        CRC VERIFICATION AREA        */
+uint8_t bootloader_verify_crc(uint8_t *buffer,uint32_t length,uint32_t crc_host)
+{
+  uint32_t crc_Value = 0xFF;
+  uint32_t data = 0;
+  for(uint32_t i = 0;i<length;i++)
+  {
+	  data = buffer[i];
+	  crc_Value = HAL_CRC_Accumulate(&hcrc,&data,1);
+
+  }
+  __HAL_CRC_DR_RESET(&hcrc);
+  if(crc_Value == crc_host)
+  {
+    return CRC_SUCCESS;
+
+  }
+
+ return CRC_FAIL;
+}
+void bootloader_send_ack(uint8_t commandCode,uint8_t follow_length)
+{
+  uint8_t ackBuffer[2];
+  ackBuffer[0] = BL_ACK_VALUE;
+  ackBuffer[1] = follow_length;
+  HAL_UART_Transmit(&huart3,ackBuffer,2,HAL_MAX_DELAY);
+
+}
+void bootloader_send_nack()
+{
+	uint8_t nackValue = BL_NACK_VALUE;
+	HAL_UART_Transmit(&huart3,&nackValue,1,HAL_MAX_DELAY);
+
+}
+void bootloader_uart_write_data(uint8_t *Buffer,uint32_t length)
+{
+  HAL_UART_Transmit(&huart3,Buffer,length,HAL_MAX_DELAY);
+}
+uint8_t bootloader_get_version(void)
+{
+   return BL_VER;
+}
+void bootloader_get_ver_cmd(uint8_t *bl_rx_data)
+{
+    uint8_t bl_Version = 0;
+    printMessage("BL_DEBUG_MSG: Bootloader Get Version Command Working\r\n");
+
+    uint32_t command_package_length = bl_rx_data[0] + 1; // Total Length of the data
+
+    uint32_t host_crc = *((uint32_t *)(bl_rx_data + command_package_length - 4));
+
+    //CRC CONTROL
+    if(!bootloader_verify_crc(&bl_rx_data[0],command_package_length-4,host_crc))
+    {
+       printMsg("BL_DEBUG_MSG: Checksum success\r\n");
+       bootloader_send_ack(bl_rx_data[0],1);
+       bl_Version = bootloader_get_version();
+       printMsg("BL_DEBUG_MSG: BL_VER = %d\r\n",bl_Version);
+       bootloader_uart_write_data(&bl_Version,1);
+
+    }
+    else
+    {
+    	printMsg("BL_DEBUG_MSG: Checksum unsuccessful\r\n");
+    	bootloader_send_nack();
+
+    }
+
+
+
+}
+

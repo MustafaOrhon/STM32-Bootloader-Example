@@ -1,0 +1,184 @@
+00:11:11 **** Incremental Build of configuration Debug for project 003_Bootloader_User_Application ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "003_Bootloader_User_Application.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM WORKSPACES\CUBEIDE WORKSPACES\STM32-CUBEIDE-BOOTLOADER\003_Bootloader_User_Application\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="003_Bootloader_User_Application.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 003_Bootloader_User_Application.elf
+ 
+arm-none-eabi-size   003_Bootloader_User_Application.elf 
+arm-none-eabi-objdump -h -S  003_Bootloader_User_Application.elf  > "003_Bootloader_User_Application.list"
+   text	   data	    bss	    dec	    hex	filename
+  11776	    120	   1728	  13624	   3538	003_Bootloader_User_Application.elf
+Finished building: default.size.stdout
+ 
+Finished building: 003_Bootloader_User_Application.list
+ 
+00:44:10 **** Incremental Build of configuration Debug for project 002_Bootloader_Application ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "002_Bootloader_Application.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM WORKSPACES\CUBEIDE WORKSPACES\STM32-CUBEIDE-BOOTLOADER\002_Bootloader_Application\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="002_Bootloader_Application.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 002_Bootloader_Application.elf
+ 
+arm-none-eabi-size   002_Bootloader_Application.elf 
+arm-none-eabi-objdump -h -S  002_Bootloader_Application.elf  > "002_Bootloader_Application.list"
+   text	   data	    bss	    dec	    hex	filename
+  16880	    136	   2032	  19048	   4a68	002_Bootloader_Application.elf
+Finished building: default.size.stdout
+ 
+Finished building: 002_Bootloader_Application.list
+ 
+00:44:11 **** Incremental Build of configuration Debug for project 003_Bootloader_User_Application ****
+make -j12 all 
+arm-none-eabi-size   003_Bootloader_User_Application.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11776	    120	   1728	  13624	   3538	003_Bootloader_User_Application.elf
+Finished building: default.size.stdout
+ 
+00:45:01 **** Incremental Build of configuration Debug for project 002_Bootloader_Application ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/bootloader_command_app.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/bootloader_command_app.d" -MT"Core/Src/bootloader_command_app.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/bootloader_command_app.o"
+../Core/Src/bootloader_command_app.c: In function 'bootloader_mem_write_cmd':
+../Core/Src/bootloader_command_app.c:334:16: warning: variable 'checkSum' set but not used [-Wunused-but-set-variable]
+  334 |        uint8_t checkSum = 0,length = 0;
+      |                ^~~~~~~~
+../Core/Src/bootloader_command_app.c:332:16: warning: unused variable 'addrValid' [-Wunused-variable]
+  332 |        uint8_t addrValid = 0;
+      |                ^~~~~~~~~
+arm-none-eabi-gcc -o "002_Bootloader_Application.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM WORKSPACES\CUBEIDE WORKSPACES\STM32-CUBEIDE-BOOTLOADER\002_Bootloader_Application\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="002_Bootloader_Application.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 002_Bootloader_Application.elf
+ 
+arm-none-eabi-size   002_Bootloader_Application.elf 
+arm-none-eabi-objdump -h -S  002_Bootloader_Application.elf  > "002_Bootloader_Application.list"
+   text	   data	    bss	    dec	    hex	filename
+  16880	    136	   2032	  19048	   4a68	002_Bootloader_Application.elf
+Finished building: default.size.stdout
+ 
+Finished building: 002_Bootloader_Application.list
+ 
+00:45:02 **** Incremental Build of configuration Debug for project 003_Bootloader_User_Application ****
+make -j12 all 
+arm-none-eabi-size   003_Bootloader_User_Application.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11776	    120	   1728	  13624	   3538	003_Bootloader_User_Application.elf
+Finished building: default.size.stdout
+ 
+18:40:29 **** Incremental Build of configuration Debug for project 002_Bootloader_Application ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/bootloader_command_app.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/bootloader_command_app.d" -MT"Core/Src/bootloader_command_app.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/bootloader_command_app.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/bootloader_command_app.c: In function 'bootloader_mem_write_cmd':
+../Core/Src/bootloader_command_app.c:334:16: warning: variable 'checkSum' set but not used [-Wunused-but-set-variable]
+  334 |        uint8_t checkSum = 0,length = 0;
+      |                ^~~~~~~~
+../Core/Src/bootloader_command_app.c:332:16: warning: unused variable 'addrValid' [-Wunused-variable]
+  332 |        uint8_t addrValid = 0;
+      |                ^~~~~~~~~
+../Core/Src/bootloader_command_app.c: In function 'bootloader_en_rw_protect_cmd':
+../Core/Src/bootloader_command_app.c:394:5: warning: implicit declaration of function 'printMsg'; did you mean 'printMessage'? [-Wimplicit-function-declaration]
+  394 |     printMsg("BL_DEBUG_MSG: bootloader_en_rw_protect_cmd\r\n");
+      |     ^~~~~~~~
+      |     printMessage
+arm-none-eabi-gcc -o "002_Bootloader_Application.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM WORKSPACES\CUBEIDE WORKSPACES\STM32-CUBEIDE-BOOTLOADER\002_Bootloader_Application\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="002_Bootloader_Application.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+d:\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/bootloader_command_app.o: in function `bootloader_en_rw_protect_cmd':
+D:/STM WORKSPACES/CUBEIDE WORKSPACES/STM32-CUBEIDE-BOOTLOADER/002_Bootloader_Application/Debug/../Core/Src/bootloader_command_app.c:394: undefined reference to `printMsg'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: 002_Bootloader_Application.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+18:40:34 **** Incremental Build of configuration Debug for project 003_Bootloader_User_Application ****
+make -j12 all 
+arm-none-eabi-size   003_Bootloader_User_Application.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11776	    120	   1728	  13624	   3538	003_Bootloader_User_Application.elf
+Finished building: default.size.stdout
+ 
+18:40:42 **** Incremental Build of configuration Debug for project 002_Bootloader_Application ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/bootloader_command_app.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/bootloader_command_app.d" -MT"Core/Src/bootloader_command_app.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/bootloader_command_app.o"
+../Core/Src/bootloader_command_app.c: In function 'bootloader_mem_write_cmd':
+../Core/Src/bootloader_command_app.c:334:16: warning: variable 'checkSum' set but not used [-Wunused-but-set-variable]
+  334 |        uint8_t checkSum = 0,length = 0;
+      |                ^~~~~~~~
+../Core/Src/bootloader_command_app.c:332:16: warning: unused variable 'addrValid' [-Wunused-variable]
+  332 |        uint8_t addrValid = 0;
+      |                ^~~~~~~~~
+arm-none-eabi-gcc -o "002_Bootloader_Application.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM WORKSPACES\CUBEIDE WORKSPACES\STM32-CUBEIDE-BOOTLOADER\002_Bootloader_Application\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="002_Bootloader_Application.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 002_Bootloader_Application.elf
+ 
+arm-none-eabi-size   002_Bootloader_Application.elf 
+arm-none-eabi-objdump -h -S  002_Bootloader_Application.elf  > "002_Bootloader_Application.list"
+   text	   data	    bss	    dec	    hex	filename
+  18164	    132	   2036	  20332	   4f6c	002_Bootloader_Application.elf
+Finished building: default.size.stdout
+ 
+Finished building: 002_Bootloader_Application.list
+ 
+18:40:43 **** Incremental Build of configuration Debug for project 003_Bootloader_User_Application ****
+make -j12 all 
+arm-none-eabi-size   003_Bootloader_User_Application.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11776	    120	   1728	  13624	   3538	003_Bootloader_User_Application.elf
+Finished building: default.size.stdout
+ 
+18:41:01 **** Incremental Build of configuration Debug for project 002_Bootloader_Application ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/bootloader_command_app.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/bootloader_command_app.d" -MT"Core/Src/bootloader_command_app.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/bootloader_command_app.o"
+../Core/Src/bootloader_command_app.c: In function 'bootloader_mem_write_cmd':
+../Core/Src/bootloader_command_app.c:334:16: warning: variable 'checkSum' set but not used [-Wunused-but-set-variable]
+  334 |        uint8_t checkSum = 0,length = 0;
+      |                ^~~~~~~~
+arm-none-eabi-gcc -o "002_Bootloader_Application.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM WORKSPACES\CUBEIDE WORKSPACES\STM32-CUBEIDE-BOOTLOADER\002_Bootloader_Application\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="002_Bootloader_Application.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 002_Bootloader_Application.elf
+ 
+arm-none-eabi-size   002_Bootloader_Application.elf 
+arm-none-eabi-objdump -h -S  002_Bootloader_Application.elf  > "002_Bootloader_Application.list"
+   text	   data	    bss	    dec	    hex	filename
+  18160	    132	   2036	  20328	   4f68	002_Bootloader_Application.elf
+Finished building: default.size.stdout
+ 
+Finished building: 002_Bootloader_Application.list
+ 
+18:41:03 **** Incremental Build of configuration Debug for project 003_Bootloader_User_Application ****
+make -j12 all 
+arm-none-eabi-size   003_Bootloader_User_Application.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11776	    120	   1728	  13624	   3538	003_Bootloader_User_Application.elf
+Finished building: default.size.stdout
+ 
+18:42:00 **** Incremental Build of configuration Debug for project 002_Bootloader_Application ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'bootloader_uart_data_read':
+../Core/Src/main.c:381:12: error: 'BL_MEM_READ' undeclared (first use in this function); did you mean 'BL_MEM_WRITE'?
+  381 |       case BL_MEM_READ:
+      |            ^~~~~~~~~~~
+      |            BL_MEM_WRITE
+../Core/Src/main.c:381:12: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+18:42:01 **** Incremental Build of configuration Debug for project 003_Bootloader_User_Application ****
+make -j12 all 
+arm-none-eabi-size   003_Bootloader_User_Application.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11776	    120	   1728	  13624	   3538	003_Bootloader_User_Application.elf
+Finished building: default.size.stdout
+ 
+18:42:06 **** Incremental Build of configuration Debug for project 002_Bootloader_Application ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "002_Bootloader_Application.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM WORKSPACES\CUBEIDE WORKSPACES\STM32-CUBEIDE-BOOTLOADER\002_Bootloader_Application\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="002_Bootloader_Application.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 002_Bootloader_Application.elf
+ 
+arm-none-eabi-size   002_Bootloader_Application.elf 
+arm-none-eabi-objdump -h -S  002_Bootloader_Application.elf  > "002_Bootloader_Application.list"
+   text	   data	    bss	    dec	    hex	filename
+  18160	    132	   2036	  20328	   4f68	002_Bootloader_Application.elf
+Finished building: default.size.stdout
+ 
+Finished building: 002_Bootloader_Application.list
+ 
+18:42:07 **** Incremental Build of configuration Debug for project 003_Bootloader_User_Application ****
+make -j12 all 
+arm-none-eabi-size   003_Bootloader_User_Application.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11776	    120	   1728	  13624	   3538	003_Bootloader_User_Application.elf
+Finished building: default.size.stdout
+ 

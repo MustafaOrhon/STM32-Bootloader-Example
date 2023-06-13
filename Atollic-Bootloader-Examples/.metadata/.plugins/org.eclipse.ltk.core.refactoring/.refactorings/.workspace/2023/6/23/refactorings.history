@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;001_BOOTLOADER_First_Project&apos;" deleteContents="true" description="Delete resource &apos;001_BOOTLOADER_First_Project&apos;" element1="/001_BOOTLOADER_First_Project" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1685993338664"/>
+</session>

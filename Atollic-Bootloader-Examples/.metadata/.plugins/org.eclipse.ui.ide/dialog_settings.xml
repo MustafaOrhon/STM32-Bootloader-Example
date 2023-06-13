@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\STM WORKSPACES\ATOLLIC WORKSPACES\Atollic-Bootloader-Examples\002_Bootloader_USER_Application"/>
+		<item value="D:\STM WORKSPACES\ATOLLIC WORKSPACES\Atollic-Bootloader-Examples\002_BOOTLOADER_APPLICATION"/>
+		<item value="D:\STM WORKSPACES\ATOLLIC WORKSPACES\Atollic-Bootloader-Examples"/>
+		<item value="D:\STM WORKSPACES\ATOLLIC WORKSPACES\Atollic-Bootloader-Examples\001_BOOTLOADER_First_Project"/>
+	</list>
+</section>

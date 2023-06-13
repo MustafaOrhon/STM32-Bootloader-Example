@@ -1,0 +1,10 @@
+18:42:07 **** Incremental Build of configuration Debug for project 003_Bootloader_User_Application ****
+make -j12 all 
+arm-none-eabi-size   003_Bootloader_User_Application.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11776	    120	   1728	  13624	   3538	003_Bootloader_User_Application.elf
+Finished building: default.size.stdout
+ 
+
+18:42:07 Build Finished. 0 errors, 0 warnings. (took 484ms)
+
