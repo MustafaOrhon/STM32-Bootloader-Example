@@ -13,12 +13,6 @@ This repository contains the code for a simple UART bootloader implementation fo
 2. Activate the bootloader mode on the microcontroller by holding user button pressed and resetting the microcontroller with reset button.
 3. Use a terminal program or a custom tool to send firmware updates to the microcontroller over UART.
 
-## Getting Started
 
-### Prerequisites
-
-- STM32 microcontroller
-- Development environment (e.g., Atollic, Cube IDE, etc.)
-- UART connection between the microcontroller and the host device
 
   
